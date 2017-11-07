@@ -23,6 +23,10 @@ class BankAccount
     @@accounts
   end
 
+  def self.interest_reader
+    @@interest_rate
+  end
+
   def self.total_funds
     summer = 0
     @@accounts.each do |account|
@@ -31,9 +35,11 @@ class BankAccount
     return summer
   end
 
-  def interest_time
+  def self.interest_time
     @@accounts.each do |account|
-      account.balance += account.balance * @@interest_rate
+      # interest = @balance * interest_reader
+      # account.deposit_balance(interest)
+      account.deposit_balance(account.reader_balance * @@interest_rate)
     end
   end
 
@@ -60,6 +66,14 @@ BankAccount.create
 
 
 puts BankAccount.total_funds
+
+BankAccount.interest_time
+
+puts BankAccount.total_funds
+
+
+
+
 
 puts '-' * 10
 puts '-' * 10
