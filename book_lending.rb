@@ -93,7 +93,7 @@ class Book
         puts "Not due until #{booker.reader_due_date}"
     end
     return overdue
-    puts "overdue books #{overdue}" 
+    puts "overdue books #{overdue}"
   end
 
   def self.lent_out?(booker)
@@ -116,8 +116,6 @@ fourth = Book.create('Unquenchable', 'Merbles', 4737485394851)
 fifth = Book.create("Perils of Drinking and Driving Golf Carts", 'Fraterson', 7771112225558)
 
 
-
-
 puts Book.lent_out?(first)
 
 puts Book.borrow(third)
@@ -138,6 +136,16 @@ Book.overdue_books
 
 # puts Book.current_due_date
 # puts Book.shelf.inspect
+
+
+
+puts '-' * 20
+puts '-' * 20
+puts '-' * 20
+
+
+puts Book.borrowed.inspect
+
 
 puts '-' * 20
 puts '-' * 20

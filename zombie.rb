@@ -19,7 +19,7 @@ class Zombie
     if strength < @@max_strength
       @strength = strength
     else
-      strength = @@max_strength
+      strength = @@default_strength
     end
   end
 
@@ -76,7 +76,7 @@ class Zombie
 
   def survive_attack?
     player_strength = rand(@@max_strength)
-    if player_strength >= @strength
+    if player_strength > @strength
       return true
     else
       return false
